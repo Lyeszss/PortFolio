@@ -162,15 +162,13 @@ function initCarousel() {
         let currentIndex = 0;
 
         function showItem(index) {
-            // Masquer tous les items
             items.forEach(item => {
-                item.classList.remove('active');
+                item.style.display = 'none';
                 item.style.opacity = '0';
             });
             indicators.forEach(ind => ind.classList.remove('active'));
             
-            // Afficher l'item sélectionné
-            items[index].classList.add('active');
+            items[index].style.display = 'block';
             items[index].style.opacity = '1';
             indicators[index].classList.add('active');
             currentIndex = index;
@@ -189,8 +187,8 @@ function initCarousel() {
         }
 
         // Event listeners
-        nextButton.addEventListener('click', nextItem);
-        prevButton.addEventListener('click', prevItem);
+        if (prevButton) prevButton.addEventListener('click', prevItem);
+        if (nextButton) nextButton.addEventListener('click', nextItem);
         
         indicators.forEach((indicator, index) => {
             indicator.addEventListener('click', () => showItem(index));
@@ -311,4 +309,16 @@ window.addEventListener('load', function() {
 
 <div id="loader" class="loader">
     <div class="spinner"></div>
-</div> 
+</div>
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const section = document.querySelector(this.getAttribute('href'));
+        if (section) {
+            section.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+}); 
