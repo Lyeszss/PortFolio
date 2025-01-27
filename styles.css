@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap');
 
 :root {
-    --primary-color: #ffffff;    /* Texte blanc */
-    --secondary-color: #cccccc;  /* Gris clair pour texte secondaire */
-    --accent-color: #888888;     /* Gris moyen pour les hover */
-    --background-color: #121212; /* Fond très sombre */
-    --nav-bg: rgba(18, 18, 18, 0.95); /* Fond de la navigation */
-    --text-color: #ffffff;       /* Texte blanc */
+    --primary-color: #FF0000;    /* Rouge vif */
+    --secondary-color: #00FF00;  /* Vert vif */
+    --accent-color: #0000FF;     /* Bleu vif */
+    --background-color: #FFFF00; /* Jaune vif */
+    --nav-bg: rgba(255, 0, 0, 0.95); /* Rouge transparent */
+    --text-color: #000000;       /* Texte noir */
     --white: #ffffff;
     --dark: #1A1A1A;
     --light: #F8F9FA;
