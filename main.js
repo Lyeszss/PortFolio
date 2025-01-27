@@ -100,6 +100,18 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollToSection(currentSection - 1);
         }
     }, { passive: false });
+
+    // Cacher le loader après 2 secondes maximum
+    setTimeout(() => {
+        const loader = document.getElementById('loader');
+        if (loader) {
+            loader.style.display = 'none';
+        }
+    }, 2000);
+
+    // Initialiser le carousel et autres fonctionnalités
+    initCarousel();
+    displayGitHubFiles();
 });
 
 // Animation au scroll pour la section À propos
@@ -144,10 +156,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById(projectId).classList.add('active');
         });
     });
-
-    // Mise à jour de la gestion du carousel
-    initCarousel();
-    displayGitHubFiles();
 });
 
 // Mise à jour de la gestion du carousel
@@ -302,14 +310,13 @@ function displayGitHubFiles() {
         });
 }
 
+// Backup pour s'assurer que le loader disparaît
 window.addEventListener('load', function() {
     const loader = document.getElementById('loader');
-    loader.style.display = 'none';
+    if (loader) {
+        loader.style.display = 'none';
+    }
 });
-
-<div id="loader" class="loader">
-    <div class="spinner"></div>
-</div>
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
