@@ -1,10 +1,5 @@
-// Initialisation des animations
+// Simplification de l'initialisation
 document.addEventListener('DOMContentLoaded', function() {
-    // Cache le loader immédiatement si la page est déjà chargée
-    if (document.readyState === 'complete') {
-        hideLoader();
-    }
-    
     // Initialiser AOS
     AOS.init({
         duration: 1000,
@@ -39,72 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.querySelectorAll('.reveal').forEach((elem) => observer.observe(elem));
-
-    // Curseur personnalisé
-    const cursor = document.createElement('div');
-    cursor.classList.add('custom-cursor');
-    document.body.appendChild(cursor);
-
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    });
-
-    // Configuration du défilement fluide
-    let currentSection = 0;
-    const sections = document.querySelectorAll('section');
-    let isScrolling = false;
-
-    // Fonction pour le défilement fluide
-    function scrollToSection(index) {
-        if (index >= 0 && index < sections.length) {
-            isScrolling = true;
-            sections[index].scrollIntoView({ behavior: 'smooth' });
-            currentSection = index;
-            
-            // Réinitialiser les animations de la section
-            resetAnimations(sections[index]);
-            
-            // Permettre un nouveau défilement après l'animation
-            setTimeout(() => {
-                isScrolling = false;
-            }, 1000);
-        }
-    }
-
-    // Réinitialiser les animations d'une section
-    function resetAnimations(section) {
-        // Réinitialiser l'animation du logo si on est dans la section "about"
-        if (section.id === 'about') {
-            const logo = section.querySelector('.logo-container');
-            if (logo) {
-                logo.style.animation = 'none';
-                logo.offsetHeight; // Force reflow
-                logo.style.animation = 'slideInLogo 1.5s ease forwards';
-            }
-        }
-        
-        // Réinitialiser les animations reveal
-        const reveals = section.querySelectorAll('.reveal');
-        reveals.forEach(el => {
-            el.classList.remove('active');
-            void el.offsetWidth; // Force reflow
-            el.classList.add('active');
-        });
-    }
-
-    // Gestionnaire de défilement
-    window.addEventListener('wheel', function(e) {
-        if (isScrolling) return;
-        
-        if (e.deltaY > 0) {
-            // Défilement vers le bas
-            scrollToSection(currentSection + 1);
-        } else {
-            // Défilement vers le haut
-            scrollToSection(currentSection - 1);
-        }
-    }, { passive: false });
 
     // Initialiser le carousel et autres fonctionnalités
     initCarousel();
@@ -306,23 +235,6 @@ function displayGitHubFiles() {
             `;
         });
 }
-
-// Fonction pour cacher le loader
-function hideLoader() {
-    const loader = document.getElementById('loader');
-    if (loader) {
-        loader.style.opacity = '0';
-        setTimeout(() => {
-            loader.style.display = 'none';
-        }, 500);
-    }
-}
-
-// Backup pour s'assurer que le loader disparaît
-window.addEventListener('load', hideLoader);
-
-// Timeout de sécurité pour forcer la disparition du loader
-setTimeout(hideLoader, 3000);
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
