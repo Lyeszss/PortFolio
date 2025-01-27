@@ -1,5 +1,10 @@
 // Initialisation des animations
 document.addEventListener('DOMContentLoaded', function() {
+    // Cache le loader immédiatement si la page est déjà chargée
+    if (document.readyState === 'complete') {
+        hideLoader();
+    }
+    
     // Initialiser AOS
     AOS.init({
         duration: 1000,
@@ -100,14 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollToSection(currentSection - 1);
         }
     }, { passive: false });
-
-    // Cacher le loader après 2 secondes maximum
-    setTimeout(() => {
-        const loader = document.getElementById('loader');
-        if (loader) {
-            loader.style.display = 'none';
-        }
-    }, 2000);
 
     // Initialiser le carousel et autres fonctionnalités
     initCarousel();
@@ -310,13 +307,22 @@ function displayGitHubFiles() {
         });
 }
 
-// Backup pour s'assurer que le loader disparaît
-window.addEventListener('load', function() {
+// Fonction pour cacher le loader
+function hideLoader() {
     const loader = document.getElementById('loader');
     if (loader) {
-        loader.style.display = 'none';
+        loader.style.opacity = '0';
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500);
     }
-});
+}
+
+// Backup pour s'assurer que le loader disparaît
+window.addEventListener('load', hideLoader);
+
+// Timeout de sécurité pour forcer la disparition du loader
+setTimeout(hideLoader, 3000);
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

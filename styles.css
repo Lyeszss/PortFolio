@@ -1015,7 +1015,7 @@ body {
     color: var(--secondary-color);
 }
 
-/* Modification du loader */
+/* Mise à jour du style du loader */
 .loader {
     position: fixed;
     top: 0;
@@ -1028,12 +1028,7 @@ body {
     align-items: center;
     z-index: 9999;
     transition: opacity 0.5s ease;
-}
-
-/* Ajout d'une classe pour faire disparaître le loader en douceur */
-.loader.hidden {
-    opacity: 0;
-    pointer-events: none;
+    opacity: 1;
 }
 
 .spinner {
