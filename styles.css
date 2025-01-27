@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap');
 
 :root {
-    --primary-color: #FF0000;    /* Rouge vif */
-    --secondary-color: #00FF00;  /* Vert vif */
-    --accent-color: #0000FF;     /* Bleu vif */
-    --background-color: #FFFF00; /* Jaune vif */
-    --nav-bg: rgba(255, 0, 0, 0.95); /* Rouge transparent */
-    --text-color: #000000;       /* Texte noir */
+    --primary-color: #2A2A72;    /* Bleu profond */
+    --secondary-color: #009FFD;  /* Bleu clair */
+    --accent-color: #FF6B6B;     /* Corail */
+    --background-color: #1A1A1A; /* Fond sombre */
+    --nav-bg: rgba(26, 26, 26, 0.95); /* Navigation transparente */
+    --text-color: #FFFFFF;       /* Texte blanc */
     --white: #ffffff;
     --dark: #1A1A1A;
     --light: #F8F9FA;
@@ -36,7 +36,8 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(18, 18, 18, 0.95);
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
     padding: 1rem 0;
 }
 
@@ -47,7 +48,7 @@ body {
 }
 
 .nav-links a {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     text-decoration: none;
     padding: 0.5rem 1rem;
     transition: color 0.3s ease;
@@ -169,7 +170,7 @@ section {
 
 /* Style pour les titres de section */
 .section-title {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2.5rem;
