@@ -1,34 +1,13 @@
 // Initialisation des animations
-AOS.init();
-
-// Animation au scroll
-const observerOptions = {
-    threshold: 0.2,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.reveal').forEach((elem) => observer.observe(elem));
-
-// Curseur personnalisé
-const cursor = document.createElement('div');
-cursor.classList.add('custom-cursor');
-document.body.appendChild(cursor);
-
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
-
-// Animation du texte
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialiser AOS
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+    });
+
+    // Animation du texte
     const textAnimation = new SplitType('.animate-text', {
         types: 'words, chars',
         absolute: true
@@ -40,6 +19,30 @@ document.addEventListener('DOMContentLoaded', function() {
         opacity: 0,
         stagger: 0.02,
         ease: "back.out"
+    });
+
+    // Observer pour les animations au scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach((elem) => observer.observe(elem));
+
+    // Curseur personnalisé
+    const cursor = document.createElement('div');
+    cursor.classList.add('custom-cursor');
+    document.body.appendChild(cursor);
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
     });
 
     // Configuration du défilement fluide
@@ -300,6 +303,11 @@ function displayGitHubFiles() {
             `;
         });
 }
+
+window.addEventListener('load', function() {
+    const loader = document.getElementById('loader');
+    loader.style.display = 'none';
+});
 
 <div id="loader" class="loader">
     <div class="spinner"></div>

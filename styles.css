@@ -273,40 +273,33 @@ section {
 
 /* Section À propos */
 .about {
-    padding: 150px 0;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
+    padding: 100px 0;
+    background-color: var(--background-color);
     position: relative;
-    overflow: visible;
-    scroll-snap-align: start;
-}
-
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 3rem;
-    text-align: center;
-    font-weight: 600;
+    z-index: 1;
 }
 
 .about-content {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s ease-out forwards;
+    position: relative;
+    z-index: 2;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .about-text {
-    font-size: 1.1rem;
+    color: var(--text-color);
     line-height: 1.8;
-    color: var(--secondary-color);
-    text-align: justify;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
 }
 
 /* Animation au scroll */
@@ -1020,4 +1013,31 @@ body {
 
 .github-file-link i {
     color: var(--secondary-color);
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--secondary-color);
+    border-top: 3px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 } 

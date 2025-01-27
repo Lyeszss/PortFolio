@@ -7,8 +7,16 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/locomotive-scroll/4.1.1/locomotive-scroll.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
+    <!-- Ajoutez ceci juste après l'ouverture du body -->
+    <div id="loader" class="loader">
+        <div class="spinner"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="logo">Lyes DJEBBAR</div>
@@ -33,7 +41,7 @@
     <section id="about" class="about">
         <div class="container reveal">
             <div class="logo-container">
-                <img src="images/logoecole.png" alt="IA Institut By Epita" class="school-logo">
+                <img src="assets/images/logoecole.png" alt="IA Institut By Epita" class="school-logo">
             </div>
             <h2 class="section-title">À propos de moi</h2>
             <div class="about-content">
@@ -78,13 +86,13 @@
                 <div class="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="images/powerbi-preview.png" alt="Dashboard PowerBI - Vue générale" class="preview-image">
+                            <img src="assets/images/powerbi-preview.png" alt="Dashboard PowerBI - Vue générale" class="preview-image">
                         </div>
                         <div class="carousel-item">
-                            <img src="images/powerbi-preview2.png" alt="Dashboard PowerBI - Détails" class="preview-image">
+                            <img src="assets/images/powerbi-preview2.png" alt="Dashboard PowerBI - Détails" class="preview-image">
                         </div>
                         <div class="carousel-item">
-                            <img src="images/powerbi-preview3.png" alt="Dashboard PowerBI - Statistiques" class="preview-image">
+                            <img src="assets/images/powerbi-preview3.png" alt="Dashboard PowerBI - Statistiques" class="preview-image">
                         </div>
                     </div>
                     <button class="carousel-button prev">&#10094;</button>
@@ -102,10 +110,10 @@
                 <div class="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="images/python-preview1.png" alt="Projet Python 1" class="preview-image">
+                            <img src="assets/images/python-preview1.png" alt="Projet Python 1" class="preview-image">
                         </div>
                         <div class="carousel-item">
-                            <img src="images/python-preview2.png" alt="Projet Python 2" class="preview-image">
+                            <img src="assets/images/python-preview2.png" alt="Projet Python 2" class="preview-image">
                         </div>
                     </div>
                     <button class="carousel-button prev">&#10094;</button>
