@@ -246,4 +246,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+});
+
+// Gestion des projets
+document.addEventListener('DOMContentLoaded', function() {
+    const projectButtons = document.querySelectorAll('.project-select-btn');
+    const projectViews = document.querySelectorAll('.project-view');
+
+    projectButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Retirer la classe active de tous les boutons
+            projectButtons.forEach(btn => btn.classList.remove('active'));
+            // Ajouter la classe active au bouton cliqué
+            button.classList.add('active');
+
+            // Masquer toutes les vues
+            projectViews.forEach(view => view.classList.remove('active'));
+            
+            // Afficher la vue correspondante
+            const projectId = button.getAttribute('data-project');
+            const targetView = document.querySelector(`.project-view[data-project="${projectId}"]`);
+            if (targetView) {
+                targetView.classList.add('active');
+            }
+        });
+    });
 }); 

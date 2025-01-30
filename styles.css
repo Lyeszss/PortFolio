@@ -1146,4 +1146,63 @@ textarea:not(:placeholder-shown) ~ label {
 .animate-text {
     opacity: 1 !important;
     visibility: visible !important;
+}
+
+/* Styles pour les vues de projet */
+.project-view {
+    display: none;
+    height: 100%;
+}
+
+.project-view.active {
+    display: block;
+}
+
+/* Styles pour Coming Soon */
+.coming-soon {
+    display: none;
+    height: 100%;
+}
+
+.coming-soon.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coming-soon-content {
+    text-align: center;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    animation: pulse 2s infinite;
+}
+
+.coming-soon-content i {
+    font-size: 4rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.coming-soon-content h3 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.coming-soon-content p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
 } 
