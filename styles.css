@@ -625,34 +625,35 @@ body {
     gap: 2rem;
     background: var(--surface-color);
     border-radius: 20px;
-    padding: 2rem;
+    padding: 2.5rem;
     min-height: 600px;
 }
 
 /* Sélecteur de projets */
 .project-selector {
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-right: 2rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .project-selector h3 {
     font-size: 1.2rem;
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    opacity: 0.8;
 }
 
 .project-list {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
 }
 
 .project-select-btn {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1.2rem;
-    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
     border: none;
     border-radius: 12px;
     color: var(--text-secondary);
@@ -660,129 +661,80 @@ body {
     transition: all 0.3s ease;
     text-align: left;
     width: 100%;
-    font-size: 1.1rem;
-}
-
-.project-select-btn i {
-    font-size: 1.3rem;
-    width: 30px;
-    text-align: center;
 }
 
 .project-select-btn.active {
-    background: var(--gradient-primary);
+    background: var(--primary-color);
     color: white;
-    transform: translateX(10px);
-}
-
-.project-select-btn:hover:not(.active) {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateX(5px);
 }
 
 /* Contenu du projet */
-.project-content {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    gap: 2rem;
+.project-view {
+    display: none;
+    padding: 0;
 }
 
-/* Carousel */
+.project-view.active {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* Carousel/Images */
 .project-carousel {
     width: 100%;
-    height: 300px; /* Hauteur fixe pour l'image */
+    height: auto;
     border-radius: 12px;
     overflow: hidden;
 }
 
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.carousel-item {
-    min-width: 100%;
-    display: none;
-}
-
-.carousel-item.active {
-    display: block;
-}
-
-.carousel-item img {
+.project-carousel img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Garde les proportions de l'image */
+    height: auto;
+    object-fit: cover;
     border-radius: 12px;
-}
-
-.carousel-nav {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1rem;
-}
-
-.carousel-btn {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.carousel-btn:hover {
-    background: var(--primary-color);
 }
 
 /* Informations du projet */
 .project-info {
-    padding: 1rem;
+    padding: 0;
 }
 
 .project-info h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
-    line-height: 1.3;
+    font-weight: 600;
 }
 
 .project-info p {
     font-size: 1.1rem;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.7;
     margin-bottom: 2rem;
-    max-width: 800px;
+    max-width: 90%;
 }
 
+/* Tags technologies */
 .tech-tags {
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
 }
 
 .tech-tag {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.8rem 1.2rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 30px;
-    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    font-size: 0.9rem;
     color: var(--text-secondary);
 }
 
 .tech-tag i {
-    color: var(--secondary-color);
-    font-size: 1.2rem;
+    color: var(--primary-color);
 }
 
 /* Power BI Embed */
@@ -806,22 +758,12 @@ body {
     .projects-container {
         grid-template-columns: 1fr;
     }
-
+    
     .project-selector {
         border-right: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         padding-right: 0;
         padding-bottom: 2rem;
-    }
-
-    .project-list {
-        flex-direction: row;
-        overflow-x: auto;
-        padding-bottom: 1rem;
-    }
-
-    .project-select-btn {
-        min-width: 200px;
     }
 }
 
@@ -1179,11 +1121,13 @@ textarea:not(:placeholder-shown) ~ label {
 }
 
 .coming-soon-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 3rem;
     text-align: center;
-    padding: 4rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    animation: pulse 2s infinite;
 }
 
 .coming-soon-content i {
