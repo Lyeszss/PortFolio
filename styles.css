@@ -1536,144 +1536,82 @@ textarea:not(:placeholder-shown) ~ label {
 @media screen and (max-width: 768px) {
     /* Header */
     .header {
-        padding: 1rem;
-        height: auto;
-    }
-
-    .nav-links {
-        gap: 1rem;
-    }
-
-    .nav-link {
-        font-size: 0.9rem;
-        padding: 0.5rem;
-    }
-
-    /* Conteneur principal */
-    .container {
-        padding: 1rem;
-        margin-top: 60px; /* Espace pour le header fixe */
-    }
-
-    /* Section Projets */
-    .projects-container {
-        margin-top: 1rem;
-        padding: 0.5rem;
-    }
-
-    /* Ajustement des images */
-    .project-carousel {
-        height: auto;
-        margin: 0;
-        padding: 0 0.5rem;
-    }
-
-    .carousel-container {
-        aspect-ratio: 16/9;
-        width: 100%;
-    }
-
-    .carousel-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        border-radius: 8px;
-    }
-
-    /* Boutons de navigation du carousel */
-    .carousel-btn {
-        width: 30px;
-        height: 30px;
-        font-size: 0.8rem;
-        background: rgba(0, 0, 0, 0.5);
-        margin: 0 0.5rem;
-    }
-
-    /* Sélecteur de projets */
-    .project-selector {
-        padding: 0.5rem;
-    }
-
-    .project-list {
-        padding: 0.5rem;
-        margin: -0.5rem;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-    }
-
-    .project-select-btn {
-        scroll-snap-align: start;
-        padding: 0.8rem 1rem;
-        font-size: 0.9rem;
-        min-width: auto;
-        flex: 0 0 auto;
-        width: auto;
-    }
-
-    /* Contenu du projet */
-    .project-info {
-        padding: 1rem 0.5rem;
-    }
-
-    .project-info h3 {
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
-    }
-
-    .project-info p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-        margin-bottom: 1rem;
-    }
-
-    /* Tags et boutons */
-    .tech-tags {
-        gap: 0.5rem;
-        margin-top: 1rem;
-    }
-
-    .tech-tag {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.8rem;
-    }
-
-    .download-btn {
         padding: 0.8rem;
-        font-size: 0.9rem;
+    }
+
+    /* Logo/Nom */
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    /* Navigation principale */
+    .nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
         width: 100%;
-        justify-content: center;
+        background: rgba(16, 20, 30, 0.95);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0.8rem;
+        z-index: 1000;
     }
 
-    /* Ajustement des marges et espacements généraux */
-    .section-title {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .project-view {
-        gap: 1rem;
-    }
-}
-
-/* Ajustements pour très petits écrans */
-@media screen and (max-width: 360px) {
     .nav-links {
-        gap: 0.5rem;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        gap: 0;
     }
 
     .nav-link {
         font-size: 0.8rem;
-        padding: 0.4rem;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
     }
 
-    .project-info h3 {
+    .nav-link i {
         font-size: 1.2rem;
     }
 
-    .project-select-btn {
-        padding: 0.6rem 0.8rem;
-        font-size: 0.8rem;
+    /* Section hero/introduction */
+    .hero-content {
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    /* Ajustement du contenu principal pour le menu bottom */
+    main {
+        padding-bottom: 70px; /* Espace pour le menu bottom */
+    }
+}
+
+/* Très petits écrans */
+@media screen and (max-width: 360px) {
+    .nav-link {
+        font-size: 0.7rem;
+    }
+
+    .nav-link i {
+        font-size: 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
     }
 }
 
