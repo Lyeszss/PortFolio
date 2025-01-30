@@ -140,9 +140,12 @@
                 <div class="project-views">
                     <!-- Vue Power BI -->
                     <div class="project-view active" id="powerbi-view">
-                        <!-- Carousel d'images -->
                         <div class="project-carousel">
-                            <div class="carousel-track">
+                            <button class="carousel-btn prev">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            
+                            <div class="carousel-container">
                                 <div class="carousel-item active">
                                     <img src="images/powerbi-preview.png" alt="Vue d'ensemble">
                                 </div>
@@ -153,18 +156,12 @@
                                     <img src="images/powerbi-preview3.png" alt="Statistiques régionales">
                                 </div>
                             </div>
-                            <div class="carousel-nav">
-                                <button class="carousel-btn prev">
-                                    <i class="fas fa-chevron-left"></i>
-                                </button>
-                                <button class="carousel-btn next">
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                            </div>
-                            <div class="carousel-dots"></div>
+                            
+                            <button class="carousel-btn next">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
                         </div>
 
-                        <!-- Informations du projet -->
                         <div class="project-info">
                             <h3>DataVisualisation de L'Offre Culturel En France</h3>
                             <p>Dans l'objectif de répondre à une problématique "Comment valoriser
@@ -172,6 +169,13 @@
                                différents tableaux de données que nous avons traités sur Excel ainsi
                                que Power Bi afin de réaliser un visuel dynamique avancé.</p>
                             
+                            <div class="project-source">
+                                <a href="https://defis.data.gouv.fr/defis/offre-culturelle" target="_blank" class="source-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Source du projet : Data.gouv.fr
+                                </a>
+                            </div>
+
                             <div class="project-actions">
                                 <a href="chemin/vers/votre/fichier.pbix" download class="download-btn">
                                     <i class="fas fa-download"></i>
