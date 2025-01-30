@@ -251,21 +251,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Gestion de la navigation entre les projets
 document.addEventListener('DOMContentLoaded', function() {
     const projectButtons = document.querySelectorAll('.project-select-btn');
+    const projectViews = document.querySelectorAll('.project-view');
     
+    // Fonction pour afficher un projet
+    function showProject(projectId) {
+        // Cacher tous les projets
+        projectViews.forEach(view => {
+            view.classList.remove('active');
+        });
+        
+        // Afficher le projet sélectionné
+        const selectedView = document.getElementById(`${projectId}-view`);
+        if (selectedView) {
+            selectedView.classList.add('active');
+        }
+        
+        // Mettre à jour les boutons
+        projectButtons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-project') === projectId) {
+                btn.classList.add('active');
+            }
+        });
+    }
+    
+    // Gestionnaire d'événements pour les boutons
     projectButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Retirer la classe active de tous les boutons
-            projectButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-
-            // Masquer toutes les vues
-            document.querySelectorAll('.project-view').forEach(view => {
-                view.classList.remove('active');
-            });
-
-            // Afficher la vue correspondante
+        button.addEventListener('click', (e) => {
             const projectId = button.getAttribute('data-project');
-            document.getElementById(`${projectId}-view`).classList.add('active');
+            showProject(projectId);
         });
     });
+    
+    // Afficher le projet Power BI par défaut au chargement
+    showProject('powerbi');
 }); 
