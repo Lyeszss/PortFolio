@@ -2,18 +2,18 @@
 
 :root {
     /* Palette principale */
-    --primary-color: #4F46E5;    /* Indigo vibrant pour les éléments principaux */
-    --secondary-color: #818CF8;  /* Indigo plus clair pour les accents */
-    --background-color: #0F172A; /* Fond bleu très foncé */
-    --surface-color: #1E293B;   /* Pour les cartes et sections */
+    --primary-color: #4F46E5;    /* Indigo vibrant */
+    --secondary-color: #818CF8;  /* Indigo plus clair */
+    --background-color: #0F172A; /* Fond bleu foncé */
+    --surface-color: #1E293B;   /* Pour les cartes */
     
     /* Textes */
-    --text-primary: #F8FAFC;    /* Texte principal presque blanc */
-    --text-secondary: #94A3B8;  /* Texte secondaire gris bleuté */
+    --text-primary: #F8FAFC;    /* Texte principal */
+    --text-secondary: #94A3B8;  /* Texte secondaire */
     
     /* Accents */
-    --accent-success: #10B981;  /* Vert émeraude pour les succès */
-    --accent-hover: #6366F1;    /* Couleur au survol */
+    --accent-success: #10B981;  /* Vert émeraude */
+    --accent-hover: #6366F1;    /* Hover */
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, #4F46E5 0%, #818CF8 100%);
@@ -46,9 +46,9 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
     background-color: var(--background-color);
     color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
 }
