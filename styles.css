@@ -1530,4 +1530,166 @@ textarea:not(:placeholder-shown) ~ label {
     .about-image {
         max-width: 150px;
     }
+}
+
+/* Ajustements pour le header et la navigation */
+@media screen and (max-width: 768px) {
+    /* Header */
+    .header {
+        padding: 1rem;
+        height: auto;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    /* Conteneur principal */
+    .container {
+        padding: 1rem;
+        margin-top: 60px; /* Espace pour le header fixe */
+    }
+
+    /* Section Projets */
+    .projects-container {
+        margin-top: 1rem;
+        padding: 0.5rem;
+    }
+
+    /* Ajustement des images */
+    .project-carousel {
+        height: auto;
+        margin: 0;
+        padding: 0 0.5rem;
+    }
+
+    .carousel-container {
+        aspect-ratio: 16/9;
+        width: 100%;
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+
+    /* Boutons de navigation du carousel */
+    .carousel-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+        background: rgba(0, 0, 0, 0.5);
+        margin: 0 0.5rem;
+    }
+
+    /* Sélecteur de projets */
+    .project-selector {
+        padding: 0.5rem;
+    }
+
+    .project-list {
+        padding: 0.5rem;
+        margin: -0.5rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+
+    .project-select-btn {
+        scroll-snap-align: start;
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+        min-width: auto;
+        flex: 0 0 auto;
+        width: auto;
+    }
+
+    /* Contenu du projet */
+    .project-info {
+        padding: 1rem 0.5rem;
+    }
+
+    .project-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-info p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+
+    /* Tags et boutons */
+    .tech-tags {
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .tech-tag {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .download-btn {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Ajustement des marges et espacements généraux */
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-view {
+        gap: 1rem;
+    }
+}
+
+/* Ajustements pour très petits écrans */
+@media screen and (max-width: 360px) {
+    .nav-links {
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+        padding: 0.4rem;
+    }
+
+    .project-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .project-select-btn {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Fix pour le scroll horizontal indésirable */
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Amélioration de la navigation tactile */
+@media (hover: none) {
+    .project-select-btn:hover {
+        transform: none;
+    }
+
+    .carousel-btn:hover {
+        transform: none;
+    }
 } 
