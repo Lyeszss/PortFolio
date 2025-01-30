@@ -140,15 +140,49 @@
                 <div class="project-views">
                     <!-- Vue Power BI -->
                     <div class="project-view active" id="powerbi-view">
+                        <!-- Carousel d'images -->
                         <div class="project-carousel">
-                            <img src="images/powerbi-preview.png" alt="PowerBI Preview 1">
+                            <div class="carousel-track">
+                                <div class="carousel-item active">
+                                    <img src="images/powerbi-preview.png" alt="Vue d'ensemble">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/powerbi-preview2.png" alt="Analyse détaillée">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/powerbi-preview3.png" alt="Statistiques régionales">
+                                </div>
+                            </div>
+                            <div class="carousel-nav">
+                                <button class="carousel-btn prev">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="carousel-btn next">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="carousel-dots"></div>
                         </div>
+
+                        <!-- Informations du projet -->
                         <div class="project-info">
                             <h3>DataVisualisation de L'Offre Culturel En France</h3>
                             <p>Dans l'objectif de répondre à une problématique "Comment valoriser
                                l'offre culturelle et favoriser l'accès à la culture ?" nous analysé
                                différents tableaux de données que nous avons traités sur Excel ainsi
                                que Power Bi afin de réaliser un visuel dynamique avancé.</p>
+                            
+                            <div class="project-actions">
+                                <a href="chemin/vers/votre/fichier.pbix" download class="download-btn">
+                                    <i class="fas fa-download"></i>
+                                    Télécharger le fichier PBIX
+                                </a>
+                                <div class="requirement-note">
+                                    <i class="fas fa-info-circle"></i>
+                                    Power BI Desktop est requis pour ouvrir la visualisation
+                                </div>
+                            </div>
+
                             <div class="tech-tags">
                                 <span class="tech-tag">
                                     <i class="fas fa-chart-bar"></i>

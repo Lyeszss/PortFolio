@@ -285,4 +285,59 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Afficher le projet Power BI par défaut au chargement
     showProject('powerbi');
+});
+
+// Ajouter cette fonction pour gérer le carousel
+function initializeCarousel() {
+    const carouselTrack = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.carousel-item');
+    const prevButton = document.querySelector('.carousel-btn.prev');
+    const nextButton = document.querySelector('.carousel-btn.next');
+    const dotsContainer = document.querySelector('.carousel-dots');
+    
+    let currentIndex = 0;
+    
+    // Créer les points de navigation
+    slides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+    
+    // Fonctions de navigation
+    function updateSlides() {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[currentIndex].classList.add('active');
+        
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentIndex].classList.add('active');
+    }
+    
+    function goToSlide(index) {
+        currentIndex = index;
+        updateSlides();
+    }
+    
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlides();
+    }
+    
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlides();
+    }
+    
+    // Événements
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
+}
+
+// Appeler l'initialisation du carousel après le chargement du DOM
+document.addEventListener('DOMContentLoaded', function() {
+    initializeCarousel();
+    // ... votre code existant ...
 }); 
