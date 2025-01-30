@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
+    <title>Lyes DJEBBAR - Portfolio</title>
+    <meta name="description" content="Portfolio de Lyes DJEBBAR - Data Science & Intelligence Artificielle">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/locomotive-scroll/4.1.1/locomotive-scroll.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -14,177 +14,143 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo">Lyes DJEBBAR</div>
-        <ul class="nav-links">
-            <li><a href="#home">Accueil</a></li>
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#projects">Projets</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo">Lyes DJEBBAR</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Accueil</a></li>
+                <li><a href="#about" class="nav-link">À propos</a></li>
+                <li><a href="#projects" class="nav-link">Projets</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <!-- Section Accueil -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content reveal">
+        <div class="hero-content" data-aos="fade-up">
             <span class="portfolio-label">Portfolio</span>
             <h1 class="animate-text">Lyes DJEBBAR</h1>
-            <p class="tagline">Étudiant en Data Science & Intelligence Artificielle | Passionné par l'Innovation Technologique</p>
+            <p class="tagline">Étudiant en Data Science & Intelligence Artificielle</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="primary-btn">Voir mes projets</a>
+                <a href="#contact" class="secondary-btn">Me contacter</a>
+            </div>
+        </div>
+        <div class="hero-background">
+            <div class="gradient-overlay"></div>
+            <div class="particles"></div>
         </div>
     </section>
 
-    <!-- Section À propos -->
+    <!-- About Section -->
     <section id="about" class="about">
-        <div class="container reveal">
-            <div class="logo-container">
-                <img src="assets/images/logoecole.png" alt="IA Institut By Epita" class="school-logo">
-            </div>
-            <h2 class="section-title">À propos de moi</h2>
-            <div class="about-content">
-                <p class="about-text">
-                    Bonjour et bienvenue sur mon portfolio !
-                    <br><br>
-                    Je m'appelle Lyes DJEBBAR, étudiant à l'IA Institut By Epita. Passionné par les technologies et la programmation, je m'intéresse particulièrement à la data science, à la visualisation de données et à l'utilisation de l'IA dans la création d'applications web. À travers ce portfolio, je vous invite à découvrir une sélection de mes projets réalisés en Python, ainsi que dans d'autres langages, et d'autres travaux en lien avec la visualisation de données.
-                    <br><br>
-                    Je tiens à préciser que ce site est entièrement généré par IA à partir de zéro, car je ne maîtrise pas encore HTML et CSS.
-                </p>
-                
-                <!-- Ajout du bouton CV -->
-                <div class="cv-button-container">
-                    <a href="https://drive.google.com/file/d/1ONPMPyOe-9yHYDkWPT239uYBVgMcJ-Ha/view?usp=sharing" 
-                       target="_blank" 
-                       class="cv-button">
-                        <i class="fas fa-file-pdf"></i>
-                        Voir mon CV
-                    </a>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">À propos de moi</h2>
+            <div class="about-content" data-aos="fade-up" data-aos-delay="200">
+                <div class="about-image">
+                    <img src="images/logoecole.jpg" alt="IA Institut By Epita" class="school-logo">
+                </div>
+                <div class="about-text-content">
+                    <p class="about-text">
+                        Bonjour et bienvenue sur mon portfolio !
+                        <br><br>
+                        Je m'appelle Lyes DJEBBAR, étudiant à l'IA Institut By Epita. Passionné par les technologies 
+                        et la programmation, je m'intéresse particulièrement à la data science, à la visualisation 
+                        de données et à l'utilisation de l'IA dans la création d'applications web.
+                        <br><br>
+                        À travers ce portfolio, je vous invite à découvrir une sélection de mes projets réalisés 
+                        en Python, ainsi que dans d'autres langages, et d'autres travaux en lien avec la 
+                        visualisation de données.
+                    </p>
+                    <div class="about-buttons">
+                        <a href="https://drive.google.com/file/d/1ONPMPyOe-9yHYDkWPT239uYBVgMcJ-Ha/view?usp=sharing" 
+                           target="_blank" 
+                           class="cv-button">
+                            <i class="fas fa-file-pdf"></i>
+                            Voir mon CV
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Projets -->
+    <!-- Projects Section -->
     <section id="projects" class="projects">
-        <h2 class="section-title">Mes Projets</h2>
-        
-        <!-- Sélecteur de projets -->
-        <div class="project-tabs">
-            <div class="tab active" data-project="powerbi">
-                <span class="tab-text">Power BI</span>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Mes Projets</h2>
+            
+            <div class="project-tabs" data-aos="fade-up">
+                <button class="tab active" data-project="powerbi">Power BI</button>
+                <button class="tab" data-project="python">Python</button>
             </div>
-            <div class="tab" data-project="python">
-                <span class="tab-text">Python</span>
-            </div>
-        </div>
-        
-        <div class="projects-container">
-            <!-- Partie gauche : Preview du projet -->
-            <div class="project-preview active" id="powerbi-preview">
-                <div class="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="assets/images/powerbi-preview.png" alt="Dashboard PowerBI - Vue générale" class="preview-image">
+            
+            <div class="projects-content">
+                <!-- Power BI Projects -->
+                <div class="project-category active" id="powerbi">
+                    <div class="carousel">
+                        <button class="carousel-btn prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="carousel-container">
+                            <div class="carousel-item">
+                                <img src="images/powerbi-preview.jpg" alt="Dashboard PowerBI 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/powerbi-preview2.jpg" alt="Dashboard PowerBI 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/powerbi-preview3.jpg" alt="Dashboard PowerBI 3">
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <img src="assets/images/powerbi-preview2.png" alt="Dashboard PowerBI - Détails" class="preview-image">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="assets/images/powerbi-preview3.png" alt="Dashboard PowerBI - Statistiques" class="preview-image">
-                        </div>
-                    </div>
-                    <button class="carousel-button prev">&#10094;</button>
-                    <button class="carousel-button next">&#10095;</button>
-                    <div class="carousel-indicators">
-                        <span class="indicator active"></span>
-                        <span class="indicator"></span>
-                        <span class="indicator"></span>
+                        <button class="carousel-btn next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
-            </div>
 
-            <!-- Preview Python -->
-            <div class="project-preview" id="python-preview">
-                <div class="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="assets/images/python-preview1.png" alt="Projet Python 1" class="preview-image">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="assets/images/python-preview2.png" alt="Projet Python 2" class="preview-image">
-                        </div>
-                    </div>
-                    <button class="carousel-button prev">&#10094;</button>
-                    <button class="carousel-button next">&#10095;</button>
-                    <div class="carousel-indicators">
-                        <span class="indicator active"></span>
-                        <span class="indicator"></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Partie droite : Description -->
-            <div class="project-details">
-                <div class="project-content active" id="powerbi">
-                    <h3>Analyse de Données avec Power BI</h3>
-                    <p>Visualisation interactive des données permettant d'analyser les tendances et patterns clés. Ce projet met en évidence l'utilisation avancée de Power BI pour la création de dashboards dynamiques et informatifs.</p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Voir la visualisation</a>
-                        <a href="#" class="project-link download">Télécharger le fichier .pbix</a>
+                <!-- Python Projects -->
+                <div class="project-category" id="python">
+                    <div class="projects-grid">
+                        <!-- Add Python projects here -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Contact -->
+    <!-- Contact Section -->
     <section id="contact" class="contact">
-        <div class="container reveal">
-            <h2 class="section-title">Me Contacter</h2>
-            <div class="contact-container">
-                <!-- Carte de contact -->
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Me Contacter</h2>
+            <div class="contact-container" data-aos="fade-up" data-aos-delay="200">
                 <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-header">
-                            <div class="profile-info">
-                                <h3>Lyes DJEBBAR</h3>
-                                <span>Data Analyst & Developer</span>
-                            </div>
+                    <h3>Restons en contact</h3>
+                    <p>N'hésitez pas à me contacter pour toute question ou proposition de collaboration.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>djlyes94@gmail.com</span>
                         </div>
-                        <div class="contact-body">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <div class="info">
-                                    <h4>Email</h4>
-                                    <a href="mailto:djlyese94@gmail.com">djlyese94@gmail.com</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fab fa-linkedin"></i>
-                                <div class="info">
-                                    <h4>LinkedIn</h4>
-                                    <a href="https://www.linkedin.com/in/lyesss/" target="_blank" class="linkedin-link">
-                                        <span>Lyes DJEBBAR</span>
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="linkedin-icon">
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/lyes-djebbar-a7b2b7293/" target="_blank">
+                                LinkedIn
+                            </a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Formulaire de contact -->
-                <form class="contact-form" id="contactForm" onsubmit="sendEmail(event)">
-                    <div class="form-header">
-                        <h3>Envoyez-moi un message</h3>
-                    </div>
+                <form id="contactForm" onsubmit="sendEmail(event)">
                     <div class="form-group">
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" required placeholder=" ">
                         <label for="name">Votre nom</label>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required placeholder=" ">
                         <label for="email">Votre email</label>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" name="message" required></textarea>
+                        <textarea id="message" name="message" required placeholder=" "></textarea>
                         <label for="message">Votre message</label>
                     </div>
                     <button type="submit" class="submit-btn">
@@ -196,34 +162,11 @@
         </div>
     </section>
 
-    <!-- Ajoutez cette section avant le footer -->
-    <section class="github-section">
-        <div class="container">
-            <div class="github-files">
-                <!-- Le contenu sera généré dynamiquement par JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Lyes DJEBBAR. Tous droits réservés.</p>
-        </div>
-    </footer>
-
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://unpkg.com/split-type"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/locomotive-scroll/4.1.1/locomotive-scroll.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
-
-<!-- Dans le head -->
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/locomotive-scroll/4.1.1/locomotive-scroll.min.css" />
 
 /* Importation des polices Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap');

@@ -133,7 +133,7 @@ function initCarousel() {
     });
 }
 
-// Fonction pour envoyer l'email
+// Mise à jour de la fonction d'envoi d'email
 function sendEmail(e) {
     e.preventDefault();
     
@@ -149,7 +149,7 @@ function sendEmail(e) {
         from_name: name,
         from_email: email,
         message: message,
-        to_email: "djlyese94@gmail.com"
+        to_email: "djlyes94@gmail.com"
     })
     .then(
         function(response) {
