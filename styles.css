@@ -1149,6 +1149,11 @@ textarea:not(:placeholder-shown) ~ label {
 }
 
 /* Styles pour les vues de projet */
+.project-views {
+    flex: 1;
+    position: relative;
+}
+
 .project-view {
     display: none;
     height: 100%;
@@ -1158,51 +1163,45 @@ textarea:not(:placeholder-shown) ~ label {
     display: block;
 }
 
-/* Styles pour Coming Soon */
-.coming-soon {
+/* Style Coming Soon */
+#ml-view {
     display: none;
     height: 100%;
-}
-
-.coming-soon.active {
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
+#ml-view.active {
+    display: flex;
+}
+
 .coming-soon-content {
     text-align: center;
-    padding: 3rem;
+    padding: 4rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     animation: pulse 2s infinite;
 }
 
 .coming-soon-content i {
-    font-size: 4rem;
+    font-size: 5rem;
     color: var(--secondary-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .coming-soon-content h3 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--text-primary);
     margin-bottom: 1rem;
 }
 
 .coming-soon-content p {
     color: var(--text-secondary);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 } 
