@@ -289,55 +289,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Ajouter cette fonction pour gérer le carousel
 function initializeCarousel() {
-    const carouselTrack = document.querySelector('.carousel-track');
-    const slides = document.querySelectorAll('.carousel-item');
-    const prevButton = document.querySelector('.carousel-btn.prev');
-    const nextButton = document.querySelector('.carousel-btn.next');
-    const dotsContainer = document.querySelector('.carousel-dots');
-    
+    const items = document.querySelectorAll('.carousel-item');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
     let currentIndex = 0;
-    
-    // Créer les points de navigation
-    slides.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(index));
-        dotsContainer.appendChild(dot);
-    });
-    
-    // Fonctions de navigation
-    function updateSlides() {
-        slides.forEach(slide => slide.classList.remove('active'));
-        slides[currentIndex].classList.add('active');
+
+    // Fonction pour afficher une image spécifique
+    function showImage(index) {
+        // Masquer toutes les images
+        items.forEach(item => item.classList.remove('active'));
         
-        const dots = document.querySelectorAll('.dot');
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[currentIndex].classList.add('active');
+        // Afficher l'image sélectionnée
+        items[index].classList.add('active');
     }
-    
-    function goToSlide(index) {
-        currentIndex = index;
-        updateSlides();
-    }
-    
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlides();
-    }
-    
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateSlides();
-    }
-    
-    // Événements
-    prevButton.addEventListener('click', prevSlide);
-    nextButton.addEventListener('click', nextSlide);
+
+    // Événement pour l'image suivante
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % items.length;
+        showImage(currentIndex);
+    });
+
+    // Événement pour l'image précédente
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        showImage(currentIndex);
+    });
+
+    // Afficher la première image au chargement
+    showImage(0);
 }
 
-// Appeler l'initialisation du carousel après le chargement du DOM
-document.addEventListener('DOMContentLoaded', function() {
+// Initialiser le carousel quand le DOM est chargé
+document.addEventListener('DOMContentLoaded', () => {
     initializeCarousel();
     // ... votre code existant ...
 }); 
