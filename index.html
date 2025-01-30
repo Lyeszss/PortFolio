@@ -116,40 +116,91 @@
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Mes Projets</h2>
             
-            <div class="carousel">
-                <button class="carousel-btn prev">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                
-                <div class="carousel-container">
-                    <div class="carousel-item active">
-                        <img src="images/powerbi-preview.png" alt="PowerBI Preview 1">
-                        <div class="project-info">
+            <div class="projects-container" data-aos="fade-up" data-aos-delay="200">
+                <!-- Sélecteur de projets -->
+                <div class="project-selector">
+                    <h3>Sélectionner un projet</h3>
+                    <div class="project-list">
+                        <button class="project-select-btn active" data-project="ventes">
+                            <i class="fas fa-chart-line"></i>
+                            Analyse des Ventes
+                        </button>
+                        <button class="project-select-btn" data-project="performance">
+                            <i class="fas fa-chart-bar"></i>
+                            KPIs & Performance
+                        </button>
+                        <button class="project-select-btn" data-project="finance">
+                            <i class="fas fa-coins"></i>
+                            Dashboard Financier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Contenu du projet -->
+                <div class="project-content">
+                    <!-- Carousel d'images -->
+                    <div class="project-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="carousel-item active">
+                                    <img src="images/powerbi-preview.png" alt="PowerBI Preview 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/powerbi-preview2.png" alt="PowerBI Preview 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/powerbi-preview3.png" alt="PowerBI Preview 3">
+                                </div>
+                            </div>
+                            <div class="carousel-nav">
+                                <button class="carousel-btn prev">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="carousel-btn next">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="carousel-dots"></div>
+                        </div>
+                    </div>
+
+                    <!-- Informations du projet -->
+                    <div class="project-info">
+                        <div class="project-description">
                             <h3>Analyse des Ventes</h3>
-                            <p>Dashboard interactif pour l'analyse des ventes</p>
+                            <p>Dashboard interactif permettant l'analyse approfondie des ventes. 
+                               Ce projet offre une vue détaillée des performances commerciales avec 
+                               des indicateurs clés et des visualisations dynamiques.</p>
                         </div>
-                    </div>
-                    
-                    <div class="carousel-item">
-                        <img src="images/powerbi-preview2.png" alt="PowerBI Preview 2">
-                        <div class="project-info">
-                            <h3>Analyse des Performances</h3>
-                            <p>Suivi des KPIs et métriques clés</p>
+                        
+                        <div class="project-tech">
+                            <h4>Technologies utilisées</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">
+                                    <i class="fas fa-chart-bar"></i>
+                                    Power BI
+                                </span>
+                                <span class="tech-tag">
+                                    <i class="fas fa-database"></i>
+                                    SQL
+                                </span>
+                                <span class="tech-tag">
+                                    <i class="fas fa-code"></i>
+                                    DAX
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="carousel-item">
-                        <img src="images/powerbi-preview3.png" alt="PowerBI Preview 3">
-                        <div class="project-info">
-                            <h3>Analyse Financière</h3>
-                            <p>Tableau de bord financier</p>
+
+                        <!-- Intégration Power BI (si possible) -->
+                        <div class="powerbi-embed">
+                            <h4>Version interactive</h4>
+                            <div class="embed-container">
+                                <!-- Ici nous ajouterons l'iframe Power BI si possible -->
+                                <p class="embed-placeholder">Version interactive disponible sur demande</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <button class="carousel-btn next">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
     </section>
