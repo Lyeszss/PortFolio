@@ -1,0 +1,32 @@
+[33mcc7ef2e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Revert: retour à la navigation en haut avec optimisations
+[33m5d7d341[m Fix: amélioration de la navigation mobile et centrage du contenu
+[33me5b385a[m Fix: correction majeure du responsive design pour mobile
+[33mc448a32[m Feature: optimisation responsive design pour mobile et tablette
+[33m04757fe[m Update: mise à jour des liens CV et LinkedIn
+[33mb4bc745[m Feature: ajout d'animations pour améliorer l'expérience utilisateur
+[33mf30365a[m Update: correction du carousel et ajout du lien de téléchargement PBIX
+[33m3b0651b[m Update: amélioration du carousel, ajout du lien source et refonte du design des boutons
+[33m4fdf2a3[m Feature: ajout du carousel d'images, bouton de téléchargement PBIX et note d'information
+[33mddfbaf4[m Style: amélioration du design et alignement des éléments dans la section projets
+[33mbcedc60[m Fix: correction des problèmes de taille et de navigation dans la section projets
+[33m65243db[m Update: modification du texte de présentation du projet Power BI
+[33m1fec895[m Update: ajout de la fonctionnalité Coming Soon pour Machine Learning et système de navigation entre projets
+[33m4a5c893[m Fix: correction des extensions d'images (.jpg -> .png)
+[33ma77023d[m Update: refonte complète de la section À propos
+[33m676e38f[m Update: refonte complète de la section À propos
+[33m1ea0ed2[m Fix: correction de la section projets et des chemins d'images
+[33m120f2a2[m Fix: correction des extensions d'images (.jpg -> .png)
+[33m3cd56c5[m Fix: correction de la section projets et des chemins d'images
+[33m7a4e0b0[m Update: nouvelle palette de couleurs
+[33m8d5e8b0[m Update: nouvelle palette de couleurs et suppression section code source
+[33m9c1b962[m Fix: suppression du loader pour résoudre le problème de chargement
+[33mb248c1e[m Fix: correction du loader pour Chrome
+[33m3c1fc38[m Fix: correction du loader infini
+[33m1e15831[m Style: mise à jour des couleurs et amélioration du design
+[33ma3578f8[m Test: changement des couleurs pour test
+[33m243072b[m Fix: carousel et sections invisibles
+[33me58c755[m Fix: correction des bugs d'affichage et animations
+[33m92cf36f[m Add files via upload
+[33mce6c102[m Add files via upload
+[33m4d6f92c[m Premier commit : ajout des fichiers du portfolio
+[33mfeb3a57[m Initial commit
