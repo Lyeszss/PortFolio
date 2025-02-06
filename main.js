@@ -435,4 +435,63 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+});
+
+// Ajouter ce code pour la gestion de la navigation
+document.addEventListener('DOMContentLoaded', function() {
+    // Gestion du scroll pour le header
+    const header = document.querySelector('.header');
+    const navLinks = document.querySelectorAll('.nav-link');
+    let lastScroll = 0;
+
+    // Fonction pour gérer l'apparence du header au scroll
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
+        lastScroll = currentScroll;
+    });
+
+    // Gestion des liens actifs
+    function setActiveLink() {
+        const sections = document.querySelectorAll('section');
+        const scrollPosition = window.pageYOffset;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.clientHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+
+    // Écouter le scroll pour mettre à jour le lien actif
+    window.addEventListener('scroll', setActiveLink);
+    
+    // Animation douce pour le scroll
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            window.scrollTo({
+                top: targetSection.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        });
+    });
 }); 
