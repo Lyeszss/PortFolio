@@ -403,36 +403,46 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.appendChild(modal);
             
             // Afficher la modal avec animation
-            setTimeout(() => {
+            requestAnimationFrame(() => {
                 modal.classList.add('active');
-            }, 10);
+            });
             
             // Empêcher le scroll du body
             document.body.style.overflow = 'hidden';
             
             // Fonction de fermeture
-            const closeModal = () => {
+            const closeModal = (e) => {
+                e.stopPropagation(); // Empêcher la propagation de l'événement
                 modal.classList.remove('active');
                 setTimeout(() => {
                     document.body.removeChild(modal);
                     document.body.style.overflow = 'auto';
                 }, 300);
+                
+                // Retirer immédiatement les écouteurs d'événements
+                closeButton.removeEventListener('click', closeModal);
+                modal.removeEventListener('click', handleModalClick);
+                document.removeEventListener('keydown', handleEscKey);
             };
             
-            // Événements de fermeture
-            closeButton.addEventListener('click', closeModal);
-            modal.addEventListener('click', (e) => {
+            // Gestionnaire pour le clic en dehors de l'image
+            const handleModalClick = (e) => {
                 if (e.target === modal) {
-                    closeModal();
+                    closeModal(e);
                 }
-            });
+            };
             
-            // Fermeture avec Echap
-            document.addEventListener('keydown', function(e) {
+            // Gestionnaire pour la touche Echap
+            const handleEscKey = (e) => {
                 if (e.key === 'Escape') {
-                    closeModal();
+                    closeModal(e);
                 }
-            });
+            };
+            
+            // Ajouter les écouteurs d'événements
+            closeButton.addEventListener('click', closeModal, { once: true });
+            modal.addEventListener('click', handleModalClick);
+            document.addEventListener('keydown', handleEscKey);
         });
     });
 });
