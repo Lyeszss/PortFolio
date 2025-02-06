@@ -323,4 +323,54 @@ function initializeCarousel() {
 document.addEventListener('DOMContentLoaded', () => {
     initializeCarousel();
     // ... votre code existant ...
+});
+
+// Ajouter à la fin du fichier main.js
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.close-modal');
+    
+    // Fonction pour ouvrir la modal
+    function openModal(imageSrc) {
+        modalImg.src = imageSrc;
+        modal.style.display = 'flex';
+        setTimeout(() => {
+            modal.classList.add('active');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // Fonction pour fermer la modal
+    function closeModal() {
+        modal.classList.remove('active');
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
+    
+    // Ajouter les événements click sur les images
+    document.querySelectorAll('.carousel-item img').forEach(img => {
+        img.addEventListener('click', function() {
+            openModal(this.src);
+        });
+    });
+    
+    // Fermer la modal avec le bouton
+    closeBtn.addEventListener('click', closeModal);
+    
+    // Fermer la modal en cliquant en dehors de l'image
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Fermer la modal avec la touche Echap
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            closeModal();
+        }
+    });
 }); 
