@@ -137,13 +137,13 @@
                             
                             <div class="carousel-container">
                                 <div class="carousel-item active">
-                                    <img src="images/powerbi-preview.png" alt="Vue d'ensemble">
+                                    <img src="images/powerbi-preview.png" alt="Vue d'ensemble" class="zoomable-image">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="images/powerbi-preview2.png" alt="Analyse détaillée">
+                                    <img src="images/powerbi-preview2.png" alt="Analyse détaillée" class="zoomable-image">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="images/powerbi-preview3.png" alt="Statistiques régionales">
+                                    <img src="images/powerbi-preview3.png" alt="Statistiques régionales" class="zoomable-image">
                                 </div>
                             </div>
                             
@@ -285,79 +285,3 @@
 </body>
 </html>
 
-/* Importation des polices Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap');
-
-:root {
-    --primary-color: #2A2A72;
-    --secondary-color: #009FFD;
-    --accent-color: #FF6B6B;
-    --dark: #1A1A1A;
-    --light: #F8F9FA;
-    
-    /* Nouvelles variables pour l'animation */
-    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-fast: 0.3s ease;
-}
-
-/* Styles de base améliorés */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--light);
-    color: var(--dark);
-    overflow-x: hidden;
-}
-
-h1, h2, h3 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-}
-
-/* Navigation moderne avec effet de glassmorphism */
-.navbar {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Animation du hero */
-.hero-content {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s forwards;
-}
-
-/* Effet de carte 3D pour les projets */
-.project-card {
-    transform-style: preserve-3d;
-    transition: transform var(--transition-slow);
-}
-
-.project-card:hover {
-    transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-/* Animations au scroll */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all var(--transition-slow);
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Curseur personnalisé */
-.custom-cursor {
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--primary-color);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-} 

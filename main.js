@@ -373,4 +373,66 @@ document.addEventListener('DOMContentLoaded', function() {
             closeModal();
         }
     });
+});
+
+// Ajoutez ce code à votre fichier main.js existant
+document.addEventListener('DOMContentLoaded', function() {
+    // Sélectionner toutes les images avec la classe zoomable-image
+    const zoomableImages = document.querySelectorAll('.zoomable-image');
+    
+    zoomableImages.forEach(image => {
+        image.addEventListener('click', function() {
+            // Créer la modal dynamiquement
+            const modal = document.createElement('div');
+            modal.className = 'image-modal';
+            
+            const modalContent = document.createElement('div');
+            modalContent.className = 'modal-content';
+            
+            const modalImage = document.createElement('img');
+            modalImage.src = this.src;
+            modalImage.alt = this.alt;
+            
+            const closeButton = document.createElement('button');
+            closeButton.className = 'close-modal';
+            closeButton.innerHTML = '<i class="fas fa-times"></i>';
+            
+            modalContent.appendChild(modalImage);
+            modalContent.appendChild(closeButton);
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+            
+            // Afficher la modal avec animation
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 10);
+            
+            // Empêcher le scroll du body
+            document.body.style.overflow = 'hidden';
+            
+            // Fonction de fermeture
+            const closeModal = () => {
+                modal.classList.remove('active');
+                setTimeout(() => {
+                    document.body.removeChild(modal);
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            };
+            
+            // Événements de fermeture
+            closeButton.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+            
+            // Fermeture avec Echap
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        });
+    });
 }); 
