@@ -241,6 +241,8 @@ section {
     border-radius: 20px;
     padding: 3rem;
     box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
 }
 
 .about-left, .about-right {
@@ -553,40 +555,57 @@ section {
     transform: translateY(0);
 }
 
-/* Style du logo */
-.logo-container {
+/* Style pour le logo de l'école */
+.school-logo-container {
     position: absolute;
-    top: -80px;
-    right: -300px;
-    transform: rotate(-15deg);
+    top: 50%;
+    right: -50px;
+    transform: translateY(-50%) rotate(-15deg);
     opacity: 0;
-    animation: slideInLogo 1.5s ease forwards;
-    animation-delay: 0.5s;
-    z-index: 2;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
 }
 
 .school-logo {
-    width: 200px;
+    width: 180px;
     height: auto;
-    transition: transform 0.3s ease;
+    opacity: 0.2;
+    filter: grayscale(100%);
+    transition: all 0.4s ease;
 }
 
-.school-logo:hover {
-    transform: scale(1.1) rotate(5deg);
+/* Animation d'apparition */
+.school-logo-container.visible {
+    opacity: 1;
+    right: 20px;
 }
 
-@keyframes slideInLogo {
-    0% {
-        opacity: 0;
-        transform: translateX(200px) rotate(-15deg);
+/* Effet au survol */
+.about-container:hover .school-logo {
+    opacity: 0.4;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* Position relative pour le conteneur parent */
+.about-container {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .school-logo-container {
+        top: 10%;
+        right: -30px;
     }
-    50% {
-        opacity: 0.5;
+    
+    .school-logo {
+        width: 120px;
     }
-    100% {
-        opacity: 1;
-        transform: translateX(0) rotate(-15deg);
-        right: -100px;
+    
+    .school-logo-container.visible {
+        right: 10px;
     }
 }
 

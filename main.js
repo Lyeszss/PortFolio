@@ -38,6 +38,31 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialiser le carousel et autres fonctionnalités
     initCarousel();
     displayGitHubFiles();
+
+    // Ajouter ce code pour l'animation du logo
+    const logoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const logoContainer = entry.target.querySelector('.school-logo-container');
+                if (logoContainer) {
+                    logoContainer.classList.add('visible');
+                }
+            } else {
+                const logoContainer = entry.target.querySelector('.school-logo-container');
+                if (logoContainer) {
+                    logoContainer.classList.remove('visible');
+                }
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    // Observer la section À propos
+    const aboutSection = document.querySelector('#about');
+    if (aboutSection) {
+        logoObserver.observe(aboutSection);
+    }
 });
 
 // Animation au scroll pour la section À propos
